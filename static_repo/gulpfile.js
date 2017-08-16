@@ -16,12 +16,26 @@ gulp.task('copy-vendor', function() {
     gulp.src(NODE_PATH + 'bootstrap/dist/**')
         .pipe(gulp.dest(VENDOR_PATH + '/bootstrap'));
     console.log('~ copied bootstrap files');
+
+    // --- ParsleyJS end ---
+    gulp.src([
+        NODE_PATH + "parsleyjs/dist/**"
+    ]).pipe(gulp.dest(VENDOR_PATH + "parsleyjs"));
+    console.log("~ copied ParsleyJs files.");
+
+    // --- PrismJS end ---
+    gulp.src([
+        NODE_PATH + "prismjs/**"
+    ]).pipe(gulp.dest(VENDOR_PATH + "prismjs"));
+    console.log("~ copied PrismJS files.");
 });
 
 gulp.task('clear-vendor', function() {
     del.sync([
         VENDOR_PATH + 'bootstrap/**',
         VENDOR_PATH + 'jquery/**',
+        VENDOR_PATH + "parsleyjs/**",
+        VENDOR_PATH + "prismjs/**",
         '!' + VENDOR_PATH
     ]);
 });
