@@ -17,6 +17,14 @@ gulp.task('copy-vendor', function() {
         .pipe(gulp.dest(VENDOR_PATH + '/bootstrap'));
     console.log('~ copied bootstrap files');
 
+    // font awesome
+    gulp.src([
+            NODE_PATH + 'font-awesome/**/*.css',
+            NODE_PATH + 'font-awesome/**/*-webfont.*'
+        ])
+        .pipe(gulp.dest(VENDOR_PATH + '/font-awesome'));
+    console.log('~ copied font awesome files');
+
     // --- ParsleyJS end ---
     gulp.src([
         NODE_PATH + "parsleyjs/dist/**"
@@ -34,6 +42,7 @@ gulp.task('clear-vendor', function() {
     del.sync([
         VENDOR_PATH + 'bootstrap/**',
         VENDOR_PATH + 'jquery/**',
+        VENDOR_PATH + 'font-awesome/**',
         VENDOR_PATH + "parsleyjs/**",
         VENDOR_PATH + "prismjs/**",
         '!' + VENDOR_PATH
