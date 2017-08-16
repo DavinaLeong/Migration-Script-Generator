@@ -3,12 +3,15 @@
  * @var $descriptive_name
  * @var $version_number
  * @var $filename
+ * @var $html
  */
 $newline = "\n";
 $tab = "\t";
 $emptyline = $tab . $newline;
+$lt = $html ? '&lt;' : '<';
+$gt = $html ? '&gt;' : '>';
 
-echo "<?php defined('BASEPATH') OR exit('No direct script access allowed');" . $newline;
+echo $lt . "?php defined('BASEPATH') OR exit('No direct script access allowed');" . $newline;
 #region Migration Version
 echo "/* Migration version: " . $newline;
 echo " * " . $this->datetime_helper->now('d M Y, h:iA') . $newline;
@@ -23,13 +26,21 @@ echo $tab . "// Public Functions -----------------------------------------------
 echo $tab . "public function up()" . $newline;
 echo $tab . "{" . $newline;
 echo $tab . $tab . "\$this->load->model('Script_runner_model');" . $newline;
-echo $tab . $tab . "echo \$this->Script_runner_model->run_script(\$this->_up_script())['output_str'];" . $newline;
+echo $tab . $tab . "\$output = \$this->Script_runner_model->run_script(\$this->_up_script())['output_str'];" . $newline;
+echo $tab . $tab . "if(ENVIRONMENT !== 'testing')" . $newline;
+echo $tab . $tab . "{" . $newline;
+echo $tab . $tab . "    echo \"" . $lt . "code" . $gt . "\" . \$output . \"" . $lt . "/code" . $gt . $lt . "hr/" . $gt . "\";" . $newline;
+echo $tab . $tab . "}" . $newline;
 echo $tab . "}" . $newline;
 echo $emptyline;
 echo $tab . "public function down()" . $newline;
 echo $tab . "{" . $newline;
 echo $tab . $tab . "\$this->load->model('Script_runner_model');" . $newline;
-echo $tab . $tab . "echo \$this->Script_runner_model->run_script(\$this->_down_script())['output_str'];" . $newline;
+echo $tab . $tab . "\$output = \$this->Script_runner_model->run_script(\$this->_down_script())['output_str'];" . $newline;
+echo $tab . $tab . "if(ENVIRONMENT !== 'testing')" . $newline;
+echo $tab . $tab . "{" . $newline;
+echo $tab . $tab . "    echo \"" . $lt . "code" . $gt . "\" . \$output . \"" . $lt . "/code" . $gt . $lt . "hr/" . $gt . "\";" . $newline;
+echo $tab . $tab . "}" . $newline;
 echo $tab . "}" . $newline;
 echo $emptyline;
 echo $tab . "// Private Functions ---------------------------------------------------------------" . $newline;

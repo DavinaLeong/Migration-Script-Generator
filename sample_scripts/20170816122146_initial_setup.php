@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 /* Migration version: 
- * 16 Aug 2017, 12:07PM
- * 20170816120709
+ * 16 Aug 2017, 12:21PM
+ * 20170816122146
  */
 class Migration_Initial_setup extends CI_Migration
 {
@@ -80,4 +80,4 @@ class Migration_Initial_setup extends CI_Migration
 		return $sql;
 	}
 	
-} // end 20170816120709_Initial_setup class
+} // end 20170816122146_initial_setup class

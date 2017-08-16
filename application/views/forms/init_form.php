@@ -23,11 +23,14 @@
             <h2 class="panel-title"><i class="fa fa-bolt fa-fw"></i> Generate Script Form</h2>
         </div>
         <div class="panel-body text-center">
-            <a class="btn btn-primary btn-lg"
-               href="<?=site_url('generate_migration/generate_init_script');?>"
-               target="_blank">
-                Generate Script <i class="fa fa-check fa-fw"></i>
-            </a>
+            <p>This form generates a migration script which inits the usual tables like User and User Log.</p>
+            <p>
+                <a class="btn btn-primary btn-lg"
+                   href="<?=site_url('generate_migration/generate_init_script');?>"
+                   target="_blank">
+                    Generate Script <i class="fa fa-check fa-fw"></i>
+                </a>
+            </p>
         </div>
     </div>
 

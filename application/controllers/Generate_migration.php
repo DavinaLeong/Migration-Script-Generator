@@ -27,14 +27,27 @@ class Generate_migration extends CI_Controller {
     }
 
     public function generic() {
-        $this->load->view('forms/generic_form');
+        $this->form_validation->set_rules('script_name', 'Script Name', 'trim|required|alpha_dash|max_length[512]');
+
+        if($this->form_validation->run()) {
+            $script_name = $this->input->post('script_name');
+            redirect('generate_migration/generate_generic_script/' . $script_name);
+        }
+
+        $data = $this->_prepare_data('Sample_name', TRUE);
+        $this->load->view('forms/generic_form', $data);
     }
 
-    private function _prepare_data($descriptive_name, $html=FALSE) {
+    public function generate_generic_script($script_name) {
+        $data = $this->_prepare_data($script_name);
+        $this->load->view('export/generic_export', $data);
+    }
+
+    private function _prepare_data($script_name, $html=FALSE) {
         return array(
-            'descriptive_name' => $descriptive_name,
+            'descriptive_name' => ucfirst($script_name),
             'version_number' => $version_number = $this->datetime_helper->now(MIGRATION_DATE_FORMAT),
-            'filename' => $version_number . "_" . $descriptive_name,
+            'filename' => $version_number . "_" . strtolower($script_name),
             'html' => $html
         );
     }
