@@ -36,8 +36,10 @@
 		border: none;
 	}
 
-	pre {
-		max-height: 650px;
-		overflow: auto;
+	footer {
+		border-top: thin solid #ddd;
+		padding-top: 10px;
+		text-align: center;
+		min-height: 80px;
 	}
 </style>
