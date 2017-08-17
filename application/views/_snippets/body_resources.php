@@ -1,6 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-?><div style="height: 50px"></div>
-<!-- jQuery -->
+?><!-- jQuery -->
 <script src="<?=STATIC_REPO;?>vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->

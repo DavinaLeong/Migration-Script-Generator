@@ -42,6 +42,8 @@
             <pre><code class="language-php line-numbers"><?php $this->load->view('templates/init_template') ;?></code></pre>
         </div>
     </div>
+
+    <?php $this->load->view('_snippets/footer'); ?>
 </div>
 <!-- container end -->
 <?php $this->load->view('_snippets/body_resources'); ?>
