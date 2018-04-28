@@ -2,6 +2,9 @@
 ?><!-- jQuery -->
 <script src="<?=STATIC_REPO;?>vendor/jquery/jquery.min.js"></script>
 
+<!-- Popper JS -->
+<script src="<?=STATIC_REPO;?>vendor/popper.js/popper.min.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="<?=STATIC_REPO;?>vendor/bootstrap/js/bootstrap.min.js"></script>
 

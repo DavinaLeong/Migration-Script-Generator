@@ -1,17 +1,17 @@
 {
-  "_from": "prismjs",
-  "_id": "prismjs@1.6.0",
+  "_from": "prismjs@latest",
+  "_id": "prismjs@1.14.0",
   "_inBundle": false,
-  "_integrity": "sha1-EY2V+3pm26InLjQ7NF9SNmWds2U=",
+  "_integrity": "sha512-sa2s4m60bXs+kU3jcuUwx3ZCrUH7o0kuqnOOINbODqlRrDB7KY8SRx+xR/D7nHLlgfDdG7zXbRO8wJ+su5Ls0A==",
   "_location": "/prismjs",
   "_phantomChildren": {},
   "_requested": {
     "type": "tag",
     "registry": true,
-    "raw": "prismjs",
+    "raw": "prismjs@latest",
     "name": "prismjs",
     "escapedName": "prismjs",
-    "rawSpec": "",
+    "rawSpec": "latest",
     "saveSpec": null,
     "fetchSpec": "latest"
   },
@@ -19,10 +19,10 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/prismjs/-/prismjs-1.6.0.tgz",
-  "_shasum": "118d95fb7a66dba2272e343b345f5236659db365",
-  "_spec": "prismjs",
-  "_where": "C:\\wamp64\\www\\msg\\static_repo",
+  "_resolved": "https://registry.npmjs.org/prismjs/-/prismjs-1.14.0.tgz",
+  "_shasum": "bbccfdb8be5d850d26453933cb50122ca0362ae0",
+  "_spec": "prismjs@latest",
+  "_where": "C:\\wamp64\\www\\Migration-Script-Generator\\static_repo",
   "author": {
     "name": "Lea Verou"
   },
@@ -31,7 +31,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "clipboard": "^1.5.5"
+    "clipboard": "^2.0.0"
   },
   "deprecated": false,
   "description": "Lightweight, robust, elegant syntax highlighting. A spin-off project from Dabblet.",
@@ -53,7 +53,7 @@
     "jspmPackage": true,
     "format": "global",
     "files": [
-      "components/**/*.min.js",
+      "components/**/*.js",
       "plugins/**/*",
       "themes/*.css",
       "prism.js"
@@ -67,7 +67,7 @@
   "main": "prism.js",
   "name": "prismjs",
   "optionalDependencies": {
-    "clipboard": "^1.5.5"
+    "clipboard": "^2.0.0"
   },
   "repository": {
     "type": "git",
@@ -76,5 +76,6 @@
   "scripts": {
     "test": "mocha tests/testrunner-tests.js && mocha tests/run.js"
   },
-  "version": "1.6.0"
+  "style": "themes/prism.css",
+  "version": "1.14.0"
 }
