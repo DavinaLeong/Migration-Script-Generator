@@ -1,50 +1,53 @@
-var gulp = require('gulp');
-var del = require('del');
+const PATHS = {
+    nodeModules: './node_modules/',
+    vendor: './vendor/'
+};
 
-const NODE_PATH = './node_modules/';
-const VENDOR_PATH = './vendor/';
+const GULP = require('gulp'),
+    DEBUG = require('gulp-debug'),
+    DEL = require('del');
 
-gulp.task('default', ['clear-vendor', 'copy-vendor']);
 
-gulp.task('copy-vendor', function() {
+GULP.task('default', ['clear-vendor', 'copy-vendor']);
+
+GULP.task('copy-vendor', function() {
     // jquery
-    gulp.src(NODE_PATH + 'jquery/dist/**')
-        .pipe(gulp.dest(VENDOR_PATH + '/jquery'));
-    console.log('~ copied jquery files')
+    GULP.src(PATHS.nodeModules + 'jquery/dist/**/*.js')
+        .pipe(DEBUG({tite: 'Copying jQuery resources'}))
+        .pipe(GULP.dest(PATHS.vendor + '/jquery'));
+
+    // popper
+    GULP.src(PATHS.nodeModules + 'popper.js/dist/umd/**/*.js')
+        .pipe(DEBUG({tite: 'Copying Popper.js resources'}))
+        .pipe(GULP.dest(PATHS.vendor + '/popper.js'));
 
     // bootstrap
-    gulp.src(NODE_PATH + 'bootstrap/dist/**')
-        .pipe(gulp.dest(VENDOR_PATH + '/bootstrap'));
-    console.log('~ copied bootstrap files');
+    GULP.src(PATHS.nodeModules + 'bootstrap/dist/**')
+        .pipe(DEBUG({tite: 'Copying bootstrap resources'}))
+        .pipe(GULP.dest(PATHS.vendor + '/bootstrap'));
 
-    // font awesome
-    gulp.src([
-            NODE_PATH + 'font-awesome/**/*.css',
-            NODE_PATH + 'font-awesome/**/*-webfont.*'
+    // ParsleyJS end
+    GULP.src([
+            PATHS.nodeModules + "parsleyjs/dist/**/*.js"
         ])
-        .pipe(gulp.dest(VENDOR_PATH + '/font-awesome'));
-    console.log('~ copied font awesome files');
+        .pipe(DEBUG({tite: 'Copying ParsleyJS resources'}))
+        .pipe(GULP.dest(PATHS.vendor + "parsleyjs"));
 
-    // --- ParsleyJS end ---
-    gulp.src([
-        NODE_PATH + "parsleyjs/dist/**"
-    ]).pipe(gulp.dest(VENDOR_PATH + "parsleyjs"));
-    console.log("~ copied ParsleyJs files.");
-
-    // --- PrismJS end ---
-    gulp.src([
-        NODE_PATH + "prismjs/**"
-    ]).pipe(gulp.dest(VENDOR_PATH + "prismjs"));
-    console.log("~ copied PrismJS files.");
+    // PrismJS end
+    GULP.src([
+            PATHS.nodeModules + "prismjs/**/*.js"
+        ])
+        .pipe(DEBUG({tite: 'Copying PrismJS resources'}))
+        .pipe(GULP.dest(PATHS.vendor + "prismjs"));
 });
 
-gulp.task('clear-vendor', function() {
-    del.sync([
-        VENDOR_PATH + 'bootstrap/**',
-        VENDOR_PATH + 'jquery/**',
-        VENDOR_PATH + 'font-awesome/**',
-        VENDOR_PATH + "parsleyjs/**",
-        VENDOR_PATH + "prismjs/**",
-        '!' + VENDOR_PATH
+GULP.task('clear-vendor', function() {
+    DEL.sync([
+        PATHS.vendor + 'bootstrap/**',
+        PATHS.vendor + 'jquery/**',
+        PATHS.vendor + "parsleyjs/**",
+        PATHS.vendor + "popper.js/**",
+        PATHS.vendor + "prismjs/**",
+        '!' + PATHS.vendor
     ]);
 });
