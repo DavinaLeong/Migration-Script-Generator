@@ -7,10 +7,10 @@
 <body>
 <!-- .container-fluid start -->
 <div class="container-fluid">
-    <h1 class="page-header">Migration Script Generator</h1>
+    <h1 class="page-header"><i class="fa fa-code fa-fw"></i> Migration Script Generator</h1>
     <ul class="nav nav-tabs">
-        <li role="presentation"><a href="<?=site_url('generate_migration/init');?>">Inital Setup</a></li>
-        <li role="presentation" class="active"><a href="<?=site_url('generate_migration/generic');?>">Generic Script</a></li>
+        <li role="presentation"><a href="<?=site_url('generate_migration/init');?>"><i class="fa fa-cog fa-fw"></i> Inital Setup</a></li>
+        <li role="presentation" class="active"><a href="<?=site_url('generate_migration/generic');?>"><i class="fa fa-refresh fa-fw"></i> Generic Script</a></li>
     </ul>
 </div>
 <!-- .container-fluid end -->
