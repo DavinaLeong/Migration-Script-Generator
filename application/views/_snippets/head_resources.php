@@ -13,14 +13,14 @@
 <![endif]-->
 
 <!-- Font Awesome -->
-<link href="<?=STATIC_REPO;?>vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
 <!-- Bootstrap Styles for Parsley JS -->
 <script src="<?=STATIC_REPO;?>bs-parsley.css"></script>
 
 <!-- Prism CSS (for syntax highlighting) -->
 <link href="<?=STATIC_REPO;?>vendor/prismjs/themes/prism-coy.css" rel="stylesheet" />
-<link href="<?=STATIC_REPO;?>vendor/prismjs/plugins/line-numbers/prism-line-numbers.css" rel="stylesheet" />
+<!-- <link href="<?=STATIC_REPO;?>vendor/prismjs/plugins/line-numbers/prism-line-numbers.css" rel="stylesheet" /> -->
 
 <!-- favicon -->
 <link href="<?=STATIC_REPO;?>favicon.png" type="image/png" rel="icon" />

@@ -28,14 +28,14 @@ GULP.task('copy-vendor', function() {
 
     // ParsleyJS end
     GULP.src([
-            PATHS.nodeModules + "parsleyjs/dist/**/*.js"
+            PATHS.nodeModules + "parsleyjs/dist/**/*.*"
         ])
         .pipe(DEBUG({tite: 'Copying ParsleyJS resources'}))
         .pipe(GULP.dest(PATHS.vendor + "parsleyjs"));
 
     // PrismJS end
     GULP.src([
-            PATHS.nodeModules + "prismjs/**/*.js"
+            PATHS.nodeModules + "prismjs/**/*.*"
         ])
         .pipe(DEBUG({tite: 'Copying PrismJS resources'}))
         .pipe(GULP.dest(PATHS.vendor + "prismjs"));
