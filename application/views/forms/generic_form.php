@@ -20,7 +20,7 @@
     <h1 class="display-4 mb-3">Generate <span class="text-info">Generic</span> Migration Script</h1>
 
     <!-- #card-form start -->
-    <div class="card border-info mb-3">
+    <div id="card-form" class="card border-info mb-3">
         <h5 class="card-header bg-info text-white"><i class="fas fa-bolt fa-fw"></i> Generate Script Form</h5>
         <div class="card-body">
             <form method="post" data-parsley-validate>
@@ -49,8 +49,8 @@
     <!-- #card-form end -->
 
     <!-- #card-script start -->
-    <div class="card border-secondary mb-3">
-        <div class="card-header bg-secondary text-white"><i class="fas fa-code fa-fw"></i> Script Preview</div>
+    <div id="card-script" class="card border-secondary mb-3">
+        <h5 class="card-header bg-secondary text-white"><i class="fas fa-code fa-fw"></i> Script Preview</h5>
         <div class="card-body">
             <pre><code class="language-php line-numbers"><?php $this->load->view('templates/generic_template') ;?></code></pre>
         </div>
