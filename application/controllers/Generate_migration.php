@@ -16,14 +16,10 @@ class Generate_migration extends CI_Controller {
         redirect('generate_migration/generic');
     }
 
+    // --- pages ---
     public function init() {
         $data = $this->_prepare_data($this::INIT_NAME, TRUE);
         $this->load->view('forms/init_form', $data);
-    }
-
-    public function generate_init_script() {
-        $data = $this->_prepare_data($this::INIT_NAME);
-        $this->load->view('export/init_export', $data);
     }
 
     public function generic() {
@@ -36,6 +32,12 @@ class Generate_migration extends CI_Controller {
 
         $data = $this->_prepare_data('Sample_name', TRUE);
         $this->load->view('forms/generic_form', $data);
+    }
+
+    // --- exports ---
+    public function generate_init_script() {
+        $data = $this->_prepare_data($this::INIT_NAME);
+        $this->load->view('export/init_export', $data);
     }
 
     public function generate_generic_script($script_name) {
