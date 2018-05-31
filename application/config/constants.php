@@ -89,6 +89,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 | Custom Constants
 |--------------------------------------------------------------------------
 */
+define('STATIC_REPO', 'http://localhost/Migration-Script-Generator/static_repo/');
 
 define('DATE_TIME_ZONE', 'Asia/Singapore');
 define('SYSTEM_DATE_FORMAT', 'd-m-Y');
