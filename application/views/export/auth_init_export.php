@@ -10,4 +10,4 @@ header("Content-Disposition: attachment; filename=" . $filename . ".php");
 header("Pragma: no-cache");
 header("Expires: 0");
 
-$this->load->view('templates/authenticate_init_template');
+$this->load->view('templates/auth_init_template');
