@@ -5,6 +5,7 @@
  * @var $filename
  * @var $html
  */
+$now = $this->datetime_helper->now('d M Y, h:iA');
 $newline = "\n";
 $tab = "\t";
 $emptyline = $tab.$newline;
@@ -15,13 +16,13 @@ echo $lt ."?php defined('BASEPATH') OR exit('No direct script access allowed');"
 #region Migration Version
 echo "/**".$newline;
 echo " * Migration version: ".$newline;
-echo " * " .$this->datetime_helper->now("d M Y, h:iA").$newline;
-echo " * " .$version_number.$newline;
+echo " * $now".$newline;
+echo " * $version_number".$newline;
 echo " */".$newline;
 #endregion
 
 #region Migration Class
-echo 'class Migration_' .$descriptive_name .' extends CI_Migration {'.$newline;
+echo "class Migration_$descriptive_name extends CI_Migration {".$newline;
 echo $emptyline;
 echo $tab."public function up() {".$newline;
 echo $tab.$tab."\$this->load->dbforge();".$newline;
@@ -68,5 +69,5 @@ echo $tab.$tab."\$this->load->dbforge();".$newline;
 echo $tab.$tab."\$this->dbforge->drop_table('user_log');".$newline;
 echo$tab."}".$newline;
 echo $emptyline;
-echo "} " ."// end " .$filename ." class";
+echo "}//end $filename class";
 #endregion
