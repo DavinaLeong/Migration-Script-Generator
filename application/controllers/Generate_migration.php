@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Generate_migration extends CI_Controller {
 
     const INIT_NAME = 'Initial_setup';
+    const AUTH_INIT_NAME = 'Initial_setup';
 
     public function __construct() {
         parent::__construct();
@@ -20,6 +21,11 @@ class Generate_migration extends CI_Controller {
     public function init() {
         $data = $this->_prepare_data($this::INIT_NAME, TRUE);
         $this->load->view('forms/init_form', $data);
+    }
+
+    public function authenticate_init() {
+        $data = $this->_prepare_data($this::AUTH_INIT_NAME, TRUE);
+        $this->load->view('forms/authenticate_init_form', $data);
     }
 
     public function generic() {
@@ -40,9 +46,28 @@ class Generate_migration extends CI_Controller {
         $this->load->view('export/init_export', $data);
     }
 
+    public function generate_authenticate_init_script() {
+        $data = $this->_prepare_data($this::AUTH_INIT_NAME);
+        $this->load->view('export/authenticate_init_export', $data);
+    }
+
     public function generate_generic_script($script_name) {
         $data = $this->_prepare_data($script_name);
         $this->load->view('export/generic_export', $data);
+    }
+
+    private function _nav_links($active_link) {
+        return array(
+            'init' => [
+
+            ],
+            'authenticate_init' => [
+
+            ],
+            'generic' => [
+                
+            ]
+        );
     }
 
     private function _prepare_data($script_name, $html=FALSE) {

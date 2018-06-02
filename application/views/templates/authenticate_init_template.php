@@ -12,10 +12,10 @@ $emptyline = $tab.$newline;
 $lt = $html ? "&lt;" : "<";
 $gt = $html ? "&gt;" : ">";
 
-echo $lt ."?php defined('BASEPATH') OR exit('No direct script access allowed');".$newline;
+echo $lt."?php defined('BASEPATH') OR exit('No direct script access allowed');".$newline;
 #region Migration Version
 echo "/**".$newline;
-echo " * Migration version: ".$newline;
+echo " * Migration version:".$newline;
 echo " * $now".$newline;
 echo " * $version_number".$newline;
 echo " */".$newline;
