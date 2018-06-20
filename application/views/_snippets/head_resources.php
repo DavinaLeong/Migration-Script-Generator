@@ -27,6 +27,10 @@
 <title>Migration Script Generator</title>
 
 <style>
+	.font-monospace {
+		font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+	}
+
 	.row {
 		min-height: 650px;
 	}
@@ -41,5 +45,9 @@
 		padding-top: 10px;
 		text-align: center;
 		min-height: 80px;
+	}
+
+	.text-pink {
+		color: #D54E8A;
 	}
 </style>
