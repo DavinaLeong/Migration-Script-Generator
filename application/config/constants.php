@@ -95,4 +95,7 @@ define('DATE_TIME_ZONE', 'Asia/Singapore');
 define('SYSTEM_DATE_FORMAT', 'd-m-Y');
 
 define('MIGRATION_DATE_FORMAT', 'YmdHis');
-define('REGEX_PARSLEY_FILENAME', '^[A-Z]{1}[_a-zA-Z0-9]+');
+define('REGEX_PARSLEY_FILENAME', '^[A-Z]{1}[_a-zA-Z0-9]+$');
+define('REGEX_PARSLEY_FILENAME_JS', '^[a-z0-9][\-a-z0-9]+$');
+define('REGEX_PARSLEY_TABLENAME_JS', '^[A-Z][a-z0-9]+$');
+define('REGEX_PARSLEY_SCHEMANAME_JS', '^[a-z0-9]+$');
